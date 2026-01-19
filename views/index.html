@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Library</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <header>
+    <h1>Personal Library</h1>
+    <p>FreeCodeCamp Quality Assurance Project</p>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="form-section">
+        <h2>Add a New Book</h2>
+        <form id="newBookForm">
+          <label for="bookTitleInput">Book Title:</label>
+          <input type="text" id="bookTitleInput" placeholder="Enter book title" required>
+          <button type="submit">Add Book</button>
+        </form>
+      </section>
+
+      <section class="books-section">
+        <h2>All Books</h2>
+        <button id="deleteAllBtn" class="delete-all-btn">Delete All Books</button>
+        <div id="booksList"></div>
+      </section>
+
+      <section class="book-details-section" id="bookDetailsSection" style="display: none;">
+        <h2>Book Details</h2>
+        <div id="bookDetails"></div>
+        <form id="addCommentForm">
+          <label for="commentInput">Add Comment:</label>
+          <input type="text" id="commentInput" placeholder="Enter your comment" required>
+          <button type="submit">Add Comment</button>
+        </form>
+        <button id="deleteBookBtn" class="delete-btn">Delete This Book</button>
+        <button id="backToListBtn">Back to List</button>
+      </section>
+    </div>
+  </main>
+
+  <script src="/public/client.js"></script>
+</body>
+</html>
