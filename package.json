@@ -1,0 +1,28 @@
+{
+  "name": "personal-library",
+  "version": "1.0.0",
+  "description": "A personal library management system - FreeCodeCamp Quality Assurance Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha tests/2_functional-tests.js"
+  },
+  "keywords": [
+    "freecodecamp",
+    "quality-assurance",
+    "library"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.2.0"
+  }
+}
