@@ -1,74 +1,65 @@
 # Personal Library
 
-A personal library management system built as part of the FreeCodeCamp Quality Assurance certification.
+This is the boilerplate for the Personal Library project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library
 
-## Description
+## Setup
 
-This application allows users to manage a personal library by adding books, viewing book details, adding comments to books, and deleting books. It includes a RESTful API and a user-friendly web interface.
+- Install dependencies:
 
-## Features
-
-- Add new books to the library
-- View all books with comment counts
-- View individual book details with all comments
-- Add comments to books
-- Delete individual books
-- Delete all books from the library
-
-## API Endpoints
-
-### Books Collection
-- **GET** `/api/books` - Returns an array of all books with comment counts
-- **POST** `/api/books` - Creates a new book (requires `title` in request body)
-- **DELETE** `/api/books` - Deletes all books
-
-### Individual Book
-- **GET** `/api/books/:id` - Returns a single book with all comments
-- **POST** `/api/books/:id` - Adds a comment to a book (requires `comment` in request body)
-- **DELETE** `/api/books/:id` - Deletes a specific book
-
-## Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. (Optional) Create a `.env` file based on `.env.example`
-4. Start the server:
-   ```bash
-   npm start
-   ```
-
-## Testing
-
-Run the functional tests:
 ```bash
-npm test
+npm install
 ```
 
-## Technologies Used
+- Environment variables: create a `.env` file with:
 
-- Node.js
-- Express.js
-- Mocha & Chai (for testing)
-- HTML/CSS/JavaScript (frontend)
-
-## Project Structure
-
-```
-.
-├── server.js           # Main server file with API routes
-├── package.json        # Project dependencies and scripts
-├── views/
-│   └── index.html     # Main HTML page
-├── public/
-│   ├── style.css      # Styles
-│   └── client.js      # Client-side JavaScript
-└── tests/
-    └── 2_functional-tests.js  # Functional tests
+```bash
+NODE_ENV=test
+# Optional: uncomment and set your MongoDB connection string
+# DB=mongodb://user:pass@host:port/database
 ```
 
-## License
+If `DB` is not set, the app uses an in-memory store suitable for local testing.
 
-MIT
+## Run
+
+```bash
+npm start
+```
+
+The server starts on `http://localhost:3000`. When `NODE_ENV=test` is set, functional tests run automatically on startup.
+
+## API
+
+- `GET /api/books` → list all books `{ _id, title, commentcount }[]`
+- `POST /api/books` with `title` → create book → `{ _id, title }`
+- `DELETE /api/books` → delete all → `complete delete successful`
+- `GET /api/books/:id` → `{ _id, title, comments: [] }` or `no book exists`
+- `POST /api/books/:id` with `comment` → updated book or `missing required field comment`/`no book exists`
+- `DELETE /api/books/:id` → `delete successful` or `no book exists`
+
+## Using Your GitHub Repo
+
+To use this code in your repo at `https://github.com/Caleb-McKinney/my-library-1.git`:
+
+1. Clone your repo locally:
+	```bash
+	git clone https://github.com/Caleb-McKinney/my-library-1.git
+	cd my-library-1
+	```
+2. Copy the project files from this folder into your repo folder (overwrite `routes/api.js`, `tests/2_functional-tests.js`, update `package.json`, and add `.env`).
+3. Install dependencies and run:
+	```bash
+	npm install
+	npm start
+	```
+4. Commit and push:
+	```bash
+	git add -A
+	git commit -m "Implement personal library API and tests"
+	git push
+	```
+
+## Links
+
+- Solution link: `http://localhost:3000/`
+- Source code link: `https://github.com/Caleb-McKinney/my-library-1`
